@@ -54,5 +54,16 @@ grade score
     | score > 50 = "You're Pass"
     | otherwise = "Given F"
 
+last' :: [a] -> a
+last' []= error "List should't empty"
+last' [x] = x
+last' (x:xs) = reverse xs !! 0
+
+zip' :: [a] -> [b] -> [(a,b)]
+zip' [] [] = []
+zip' [x] [] = []
+zip' [] [y] = []
+zip' (x:xs) (y:ys) = [(x,y)] ++ (zip' xs ys)
+
 main = do
     print ""
